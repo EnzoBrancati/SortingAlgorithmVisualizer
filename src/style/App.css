@@ -8,3 +8,47 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+
+.visualizer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.bars-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 50%;
+    width: 80%;
+    margin: 20px 0;
+}
+
+.array-bar.sorting {
+    background-color: red;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}

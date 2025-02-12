@@ -1,0 +1,32 @@
+.bar {
+    background-color: steelblue;
+    flex: 1;
+    margin: 0 1px;
+    transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+.bar.sorted {
+    background-color: #2ecc71;
+}
+
+.bar.comparing {
+    background-color: #e74c3c;
+}
+
+.bar.swap {
+    background-color: #f1c40f;
+}
+
+.bar.potential-swap {
+    animation: blink 0.25s infinite alternate;
+}
+
+@keyframes blink {
+    from {
+        background-color: #2ecc71;
+    }
+
+    to {
+        background-color: #64f4a0;
+    }
+}
