@@ -1,26 +1,9 @@
-import React, { useState, useEffect } from "react";
-import Bars from "./Bars.tsx";
-import SortingControls from "./SortingControls.tsx";
+import React from 'react';
 
 const SortingVisualizer: React.FC = () => {
-    const [array, setArray] = useState<number[]>([]);
-    const [numElements] = useState(50);
-
-    useEffect(() => {
-        generateNewArray();
-    }, [numElements]);
-
-    const generateNewArray = () => {
-        const newArray = Array.from({ length: numElements }, () =>
-            Math.floor(Math.random() * 500)
-        );
-        setArray(newArray);
-    };
-
     return (
-        <div className="container">
-            <SortingControls generateNewArray={generateNewArray} />
-            <Bars array={array} />
+        <div>
+            <h1>Sorting Visualizer</h1>
         </div>
     );
 };
