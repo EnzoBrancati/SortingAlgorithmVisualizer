@@ -1,28 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import SortingVisualizer from './components/SortingVisualizer.tsx';
-import PathfindingVisualizer from './components/PathfindingVisualizer.tsx';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import SortingVisualizer from './pages/SortingVisualizer';
+import PathfindingVisualizer from './pages/PathfindingVisualizer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
     return (
         <Router>
-            <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/SortingVisualizer">Pagina 1</Link>
-                        </li>
-                        <li>
-                            <Link to="/PathfindingVisualizer">Pagina 2</Link>
-                        </li>
-                    </ul>
-                </nav>
-
+            <Header />
+            <div className="main-content">
                 <Routes>
-                    <Route path="/SortingVisualizer" element={<SortingVisualizer />} />
-                    <Route path="/PathfindingVisualizer" element={<PathfindingVisualizer />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/sorting" element={<SortingVisualizer />} />
+                    <Route path="/pathfinding" element={<PathfindingVisualizer />} />
                 </Routes>
             </div>
+            <Footer />
         </Router>
     );
 };
