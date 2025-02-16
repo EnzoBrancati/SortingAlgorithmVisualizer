@@ -1,23 +1,29 @@
-import React, { useState } from 'react';
-import "../style/Bars.css"
+import React, { useState, useEffect } from "react";
+import SortingControls from "../components/sorting/SortingControls.tsx";
+import Bars from "../components/sorting/Bars.tsx";
 
 const SortingVisualizer: React.FC = () => {
-    const [array, setArray] = useState<number[]>([5, 3, 8, 1, 2]);
+    const [array, setArray] = useState<number[]>([]);
+    const [numElements] = useState(50);
 
-    const sortArray = () => {
-        const sortedArray = [...array].sort((a, b) => a - b);
-        setArray(sortedArray);
+    useEffect(() => {
+        generateNewArray();
+    }, [numElements]);
+
+    const generateNewArray = () => {
+        const newArray = Array.from({ length: numElements }, () =>
+            Math.floor(Math.random() * 500)
+        );
+        setArray(newArray);
     };
 
     return (
         <div className="sorting-visualizer">
             <h1>Sorting Visualizer</h1>
-            <div className="array-bars">
-                {array.map((value, index) => (
-                    <div key={index} className="bar" style={{ height: `${value * 30}px` }}></div>
-                ))}
+            <div className="bars-container">
+                <Bars array={array} />
             </div>
-            <button onClick={sortArray}>Sort Array</button>
+            <SortingControls generateNewArray={generateNewArray} />
         </div>
     );
 };

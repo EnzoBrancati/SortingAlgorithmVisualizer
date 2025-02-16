@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import SortingVisualizer from './pages/SortingVisualizer';
 import PathfindingVisualizer from './pages/PathfindingVisualizer';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/Header.tsx';
+import Footer from './components/Footer.tsx';
 
 const App: React.FC = () => {
     return (
